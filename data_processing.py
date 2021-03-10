@@ -53,14 +53,6 @@ def get_adjacent_matrix(distance_file: str, num_nodes: int, id_file: str = None,
     return A
 
 
-def get_flow_data(flow_file: str) -> np.array:
-    """
-    :param flow_file: str,交通流量数据的 .npz 文件路径
-    :return: np.array(N, T, D)
-    """
-    data = np.load(flow_file)
-    flow_data = data['data'].transpose([1, 0, 2])[:, :, 0][:, :, np.newaxis]
-    return flow_data
 
 
 class LoadData(Dataset):
